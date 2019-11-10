@@ -5,9 +5,8 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 class SearchBar extends Component {
   state = { query: "" };
 
-  handleChange = event => {
-    this.setState({ query: event.target.value });
-    this.props.onChange(event.target.value);
+  handleFilter = event => {
+    this.props.handleFilter(event.target.value);
   };
 
   render() {
@@ -17,8 +16,7 @@ class SearchBar extends Component {
           <input
             className="form-control"
             type="text"
-            value={this.state.query}
-            onChange={this.handleChange}
+            onChange={this.handleFilter}
           />
           <div className="input-group-append">
             <span className="input-group-text">
